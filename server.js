@@ -52,6 +52,13 @@ app.use(user);
 
 app.use(helpers.errorHandler);
 
+app.get("/version", function (req, res) {
+  res.json({
+    commit: process.env.GIT_SHA || "unknown",
+    built: process.env.BUILD_TIME || "unknown"
+  });
+});
+
 var server = app.listen(process.env.PORT || 8079, function () {
   var port = server.address().port;
   console.log("App now running in %s mode on port %d", app.get("env"), port);
