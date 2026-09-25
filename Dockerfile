@@ -15,10 +15,6 @@ RUN yarn install
 
 COPY . /usr/src/app
 
-# Build info, passed in by the pipeline
-ARG GIT_SHA=unknown
-ARG BUILD_TIME=unknown
-ENV GIT_SHA=$GIT_SHA BUILD_TIME=$BUILD_TIME
 
 # Start the app
 CMD ["/usr/local/bin/npm", "start"]
