@@ -15,5 +15,6 @@ RUN yarn install
 
 COPY . /usr/src/app
 
+
 # Start the app
 CMD ["/usr/local/bin/npm", "start"]
